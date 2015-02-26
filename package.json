@@ -1,0 +1,39 @@
+{
+  "name": "strong-start",
+  "description": "quick-start command for strongloop process manager",
+  "author": "Sam Roberts <sam@strongloop.com>",
+  "license": {
+    "name": "Dual Artistic/StrongLoop",
+    "url": "https://github.com/strongloop/strong-start/blob/master/LICENSE.md"
+  },
+  "version": "1.0.0-",
+  "main": "index.js",
+  "keywords": [
+    "StrongLoop",
+    "strongloop"
+  ],
+  "homepage": "https://github.com/strongloop/strong-start",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strongloop/strong-start.git"
+  },
+  "bugs": {
+    "url": "https://github.com/strongloop/strong-start/issues"
+  },
+  "bin": {
+    "sl-start": "./bin/sl-start.js"
+  },
+  "scripts": {
+    "eslint": "eslint bin *.js",
+    "jscs": "jscs bin *.js",
+    "test": "tap test/test-*.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "tap": "~0.6.0"
+  },
+  "engine": {
+    "node": ">=0.10.0"
+  }
+}
