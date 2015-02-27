@@ -6,7 +6,7 @@
     "name": "Dual Artistic/StrongLoop",
     "url": "https://github.com/strongloop/strong-start/blob/master/LICENSE.md"
   },
-  "version": "1.0.0-",
+  "version": "1.0.0",
   "main": "index.js",
   "keywords": [
     "StrongLoop",
@@ -28,9 +28,17 @@
     "test": "tap test/test-*.js"
   },
   "dependencies": {
+    "async": "^0.9.0",
+    "debug": "^2.1.1",
+    "lodash": "^3.3.1",
+    "osenv": "^0.1.0",
+    "posix-getopt": "^1.1.0",
+    "strong-deploy": "^1.1.4",
+    "strong-pm": "^2.0.0"
   },
   "devDependencies": {
-    "tap": "~0.6.0"
+    "tap": "~0.7.0",
+    "temporary": "0.0.8"
   },
   "engine": {
     "node": ">=0.10.0"
