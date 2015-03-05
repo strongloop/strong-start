@@ -24,8 +24,7 @@
     "sl-start": "./bin/sl-start.js"
   },
   "scripts": {
-    "eslint": "eslint bin *.js",
-    "jscs": "jscs bin *.js",
+    "lint": "eslint bin lib index.js && jscs bin lib index.js",
     "test": "tap test/test-*.js"
   },
   "dependencies": {
