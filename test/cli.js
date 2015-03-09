@@ -3,7 +3,9 @@
 var assert = require('assert');
 var cp = require('child_process');
 var debug = require('debug')('strong-start:test');
+var fs = require('fs');
 var net = require('net');
+var path = require('path');
 var retry = require('../lib/retry');
 var slpmctl = require.resolve('strong-pm/bin/sl-pmctl');
 var slstart = require.resolve('../bin/sl-start');
@@ -41,8 +43,19 @@ function waitForApp(callback) {
 }
 
 function connectToApp(callback) {
-  debug('connect to app at 3000');
-  return connectTo(3000, callback);
+  fs.readFile(path.resolve(__dirname, 'app.port'), function(err, data) {
+    if (err) {
+      return callback(err);
+    } else {
+      try {
+        data = JSON.parse(data);
+      } catch(e) {
+        return callback(e);
+      }
+      debug('connect to app at ', data.port);
+      return connectTo(data.port, callback);
+    }
+  });
 }
 
 function connectToPm(callback) {
