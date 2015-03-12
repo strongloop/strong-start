@@ -26,7 +26,10 @@ function start(app) {
 
   function ran(err) {
     assert.ifError(err);
-    console.log('App `%s` started under process manager.', app);
+    console.log('App `%s` started under local process manager.', app);
+    console.log('  View the status:  slc ctl status');
+    console.log('  View the logs:    slc ctl log-dump');
+    console.log('  More options:     slc ctl -h');
     process.exit();
   }
 }
