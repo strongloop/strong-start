@@ -1,3 +1,9 @@
+2015-03-16, Version 1.0.2
+=========================
+
+ * package: bump strong-pm dependency to 3.x (Sam Roberts)
+
+
 2015-03-16, Version 1.0.1
 =========================
 
