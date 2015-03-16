@@ -49,7 +49,7 @@ function connectToApp(callback) {
     } else {
       try {
         data = JSON.parse(data);
-      } catch(e) {
+      } catch (e) {
         return callback(e);
       }
       debug('connect to app at ', data.port);

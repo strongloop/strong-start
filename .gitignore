@@ -10,6 +10,7 @@
 .statsd.json
 _patch.json
 _test-link
+checkstyle.xml
 node_modules
 npm-debug.log
 pids
