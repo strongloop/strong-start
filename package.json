@@ -34,7 +34,7 @@
     "osenv": "^0.1.0",
     "posix-getopt": "^1.1.0",
     "strong-deploy": "^1.1.4",
-    "strong-pm": "^2.0.0"
+    "strong-pm": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^0.16.1",
