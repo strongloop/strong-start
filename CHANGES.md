@@ -1,3 +1,11 @@
+2015-03-19, Version 1.0.3
+=========================
+
+ * Fix windows support (Bert Belder)
+
+ * package: update lint rules (Sam Roberts)
+
+
 2015-03-16, Version 1.0.2
 =========================
 
