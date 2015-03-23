@@ -36,7 +36,7 @@ function start(callback) {
 function waitForApp(callback) {
   debug('wait for app to be alive');
 
-  retry(connectToApp, function(err) {
+  retry(connectToApp, 100, function(err) {
     debug('after retry, connect was: %s', err);
     callback(err);
   });
