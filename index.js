@@ -5,11 +5,15 @@ var assert = require('assert');
 var debug = require('debug')('strong-start:start');
 var deploy = require('strong-deploy').local;
 var fs = require('fs');
+var path = require('path');
 
 module.exports = start;
 
 function start(app) {
   debug('app is %j', app);
+
+  var pkg = path.resolve(app || '.', 'package.json');
+  var name = require(pkg).name;
 
   var pm = new Pm();
 
@@ -22,7 +26,7 @@ function start(app) {
     }
 
     debug('deploy to %j app %j', pm.url, app);
-    deploy(pm.url, app, 'default', ran);
+    deploy(pm.url, name, app, ran);
   }
 
   function ran(err) {
