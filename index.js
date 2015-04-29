@@ -10,10 +10,11 @@ var path = require('path');
 module.exports = start;
 
 function start(app) {
-  debug('start app %j', app);
+  debug('app is %j', app);
 
-  var pkg = path.join(path.resolve(app || '.'), 'package.json');
+  var pkg = path.resolve(app || '.', 'package.json');
   var name = require(pkg).name;
+
   var pm = new Pm();
 
   pm.start(run);
@@ -24,7 +25,7 @@ function start(app) {
       process.exit(1);
     }
 
-    debug('deploy to %j app %j name %j', pm.url, app);
+    debug('deploy to %j app %j', pm.url, app);
     deploy(pm.url, name, app, ran);
   }
 
