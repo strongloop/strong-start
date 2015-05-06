@@ -29,10 +29,11 @@ function start(app) {
     deploy(pm.url, name, app, ran);
   }
 
-  function ran(err) {
+  function ran(err, service) {
     assert.ifError(err);
     var msg = fs.readFileSync(require.resolve('./started.txt'), 'utf-8')
       .replace(/%APP%/g, app)
+      .replace(/%SVC%/g, service.name || service.id)
       .trim();
     console.log(msg);
     process.exit();
