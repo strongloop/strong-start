@@ -1,3 +1,21 @@
+2015-05-08, Version 1.1.0
+=========================
+
+ * Log name of service that was started (Sam Roberts)
+
+ * fixups (Sam Roberts)
+
+ * Update pm and deploy to multiapp versions (Sam Roberts)
+
+ * Update start message (Sam Roberts)
+
+ * Update README for strong-pm.io (Sam Roberts)
+
+ * test: add package.json to test app (Ryan Graham)
+
+ * Increase timeouts for CI (Sam Roberts)
+
+
 2015-03-19, Version 1.0.3
 =========================
 
