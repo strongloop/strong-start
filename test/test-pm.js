@@ -8,25 +8,6 @@ var net = require('net');
 var tap = require('tap');
 var tmp = require('temporary');
 
-tap.test('.strong-pm does not exist', function(t) {
-  setup();
-  isAlive(function(err) {
-    debug('alive? %s', err);
-    t.assert(err);
-    t.end();
-  });
-});
-
-tap.test('.strong-pm/pmctl does not exist', function(t) {
-  setup();
-  mkbase();
-  isAlive(function(err) {
-    debug('alive? %s', err);
-    t.assert(err);
-    t.end();
-  });
-});
-
 tap.test('.strong-pm/pmctl is listening', function(t) {
   setup();
   mkbase();
@@ -34,19 +15,9 @@ tap.test('.strong-pm/pmctl is listening', function(t) {
     isAlive(function(err) {
       debug('alive? %s', err);
       t.ifError(err);
-      t.end();
-    });
-  });
-});
-
-tap.test('.strong-pm/pmctl exists, but is not listening', function(t) {
-  setup();
-  mkbase();
-  unlisten(function() {
-    isAlive(function(err) {
-      debug('alive? %s', err);
-      t.assert(err);
-      t.end();
+      server.close(function() {
+        t.end();
+      });
     });
   });
 });
@@ -65,7 +36,7 @@ tap.test('auto-start strong-pm', function(t) {
   });
 });
 
-tap.test('auto-start strong-pm', function(t) {
+tap.test('auto-start strong-pm, twice', function(t) {
   setup();
 
   isAlive(function(err) {
@@ -128,15 +99,9 @@ function mkbase() {
 var server;
 
 function listen(callback) {
-  server = net.createServer().listen(pm.control, callback)
+  server = net.createServer().listen(8701, callback)
     .on('error', assert.ifError);
   server.unref();
-}
-
-function unlisten(callback) {
-  return listen(function() {
-    server.close(callback);
-  });
 }
 
 process.on('exit', cleanup);
