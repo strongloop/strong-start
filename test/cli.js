@@ -14,6 +14,8 @@ exports.shutdown = shutdown;
 exports.start = start;
 exports.waitForApp = waitForApp;
 
+var CONTROL = '--control=http://127.0.0.1:8701';
+
 function exec(args, callback) {
   var options = {
     stdio: 'inherit',
@@ -77,7 +79,7 @@ function connectTo(port, callback) {
 }
 
 function shutdown() {
-  var args = [slpmctl, 'shutdown'];
+  var args = [slpmctl, CONTROL, 'shutdown'];
   exec(args, function() {
     debug('wait for pm to shutdown');
     retry(poll, function(err) {
