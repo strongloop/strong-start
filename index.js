@@ -26,7 +26,14 @@ function start(app) {
     }
 
     debug('deploy to %j app %j', pm.url, app);
-    deploy(pm.url, name, app, ran);
+    deploy(
+      {
+        baseURL: pm.url,
+        serviceName: name,
+        branchOrPack: app,
+        clusterSize: 1,
+      },
+      ran);
   }
 
   function ran(err, service) {
