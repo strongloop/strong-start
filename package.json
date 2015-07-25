@@ -24,7 +24,7 @@
     "sl-start": "./bin/sl-start.js"
   },
   "scripts": {
-    "lint": "eslint . && jscs .",
+    "pretest": "eslint --ignore-path .gitignore . && jscs .",
     "test": "tap test/test-*.js"
   },
   "dependencies": {
