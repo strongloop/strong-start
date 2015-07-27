@@ -1,3 +1,19 @@
+2015-07-27, Version 1.3.0
+=========================
+
+ * start: echo log changes after new deploy (Sam Roberts)
+
+ * test: update to tap 1.x (Sam Roberts)
+
+ * package: eslint pretest using .gitignore (Sam Roberts)
+
+ * pm: redirect pm output to a logfile (Sam Roberts)
+
+ * deps: upgrade strong-deploy to 3.x (Setogit)
+
+ * deps: upgrade strong-pm to 5.x (Ryan Graham)
+
+
 2015-06-10, Version 1.2.0
 =========================
 
