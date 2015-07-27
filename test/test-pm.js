@@ -29,6 +29,9 @@ tap.test('auto-start strong-pm', function(t) {
     isAlive(function(err) {
       debug('alive? %s', err);
       t.ifError(err);
+      t.doesNotThrow(function() {
+        fs.readFileSync(pm.logFile);
+      });
       kill(function() {
         t.end();
       });
@@ -45,12 +48,18 @@ tap.test('auto-start strong-pm, twice', function(t) {
     start1();
   });
 
+  var log1;
+  var log2;
+
   function start1() {
     pm.start(function(err) {
       t.ifError(err);
       isAlive(function(err) {
         debug('alive? %s', err);
         t.ifError(err);
+        t.doesNotThrow(function() {
+          t.assert((log1 = fs.readFileSync(pm.logFile, 'utf8')).length > 0);
+        });
         start2();
       });
     });
@@ -62,6 +71,13 @@ tap.test('auto-start strong-pm, twice', function(t) {
       isAlive(function(err) {
         debug('alive? %s', err);
         t.ifError(err);
+        t.doesNotThrow(function() {
+          t.assert((log2 = fs.readFileSync(pm.logFile, 'utf8')).length > 0);
+        });
+        debug('log1 <\n%s>', log1);
+        debug('log2 <\n%s>', log2);
+        if (log1.length && log2.length)
+          t.equal(log2.substr(0, log1.length), log1, 'same pm proc, same log');
         kill(function() {
           t.end();
         });

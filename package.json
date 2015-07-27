@@ -24,13 +24,14 @@
     "sl-start": "./bin/sl-start.js"
   },
   "scripts": {
-    "lint": "eslint . && jscs .",
-    "test": "tap test/test-*.js"
+    "pretest": "eslint --ignore-path .gitignore . && jscs .",
+    "test": "tap --bail test/test-*.js"
   },
   "dependencies": {
     "async": "^0.9.0",
     "debug": "^2.1.1",
     "lodash": "^3.3.1",
+    "mkdirp": "^0.5.1",
     "osenv": "^0.1.0",
     "posix-getopt": "^1.1.0",
     "strong-deploy": "^3.0.0",
@@ -39,7 +40,7 @@
   "devDependencies": {
     "eslint": "^0.17.0",
     "jscs": "^1.11.3",
-    "tap": "~0.7.0",
+    "tap": "^1.3.1",
     "temporary": "0.0.8"
   },
   "engine": {

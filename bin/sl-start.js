@@ -42,4 +42,6 @@ while ((option = parser.getopt()) !== undefined) {
 
 var app = process.argv[parser.optind()];
 
-start(app || '.');
+start(app || '.', function(err) {
+  process.exit(err ? 1 : 0);
+});
