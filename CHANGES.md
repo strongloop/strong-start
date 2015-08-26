@@ -1,3 +1,9 @@
+2015-08-26, Version 1.3.1
+=========================
+
+ * pm: truncate start.log before opening (Sam Roberts)
+
+
 2015-07-27, Version 1.3.0
 =========================
 
