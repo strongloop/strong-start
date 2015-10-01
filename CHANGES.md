@@ -1,3 +1,9 @@
+2015-10-01, Version 1.3.2
+=========================
+
+ * Use strongloop conventions for licensing (Sam Roberts)
+
+
 2015-08-26, Version 1.3.1
 =========================
 
