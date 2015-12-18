@@ -3,7 +3,7 @@
   "description": "quick-start command for strongloop process manager",
   "author": "Sam Roberts <sam@strongloop.com>",
   "license": "Artistic-2.0",
-  "version": "1.3.2",
+  "version": "2.0.0",
   "main": "index.js",
   "keywords": [
     "StrongLoop",
@@ -31,8 +31,8 @@
     "mkdirp": "^0.5.1",
     "osenv": "^0.1.0",
     "posix-getopt": "^1.1.0",
-    "strong-deploy": "^3.0.0",
-    "strong-pm": "^5.0.0"
+    "strong-deploy": "^4.x",
+    "strong-pm": "^6.x"
   },
   "devDependencies": {
     "eslint": "^0.17.0",
