@@ -22,7 +22,9 @@
   },
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore . && jscs .",
-    "test": "tap --bail test/test-*.js"
+    "test": "tap --bail test/test-*.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -32,7 +34,8 @@
     "osenv": "^0.1.0",
     "posix-getopt": "^1.1.0",
     "strong-deploy": "^3.0.0",
-    "strong-pm": "^5.0.0"
+    "strong-pm": "^5.0.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "eslint": "^0.17.0",
@@ -42,5 +45,6 @@
   },
   "engine": {
     "node": ">=0.10.0"
-  }
+  },
+  "snyk": true
 }
